@@ -6,11 +6,13 @@ import org.junit.Test;
 import static org.mockito.Mockito.*;
 //使用mock框架，创建一个Quest接口得mock实现
 public class BraveKnightTest {
+
+
     @Test
     public void knightShouldEmbarkQuest(){
-        Quest mockQuest = mock(Quest.class);
-        BraveKnight knight = new BraveKnight((SlayDragonQuest) mockQuest);
+        SlayDragonQuest slayDragonQuest = null;
+        BraveKnight knight = new BraveKnight(slayDragonQuest);
         knight.embarkQuest();
-        verify(mockQuest,times(1)).embark();
+        verify(slayDragonQuest,times(1)).embark();
     }
 }
